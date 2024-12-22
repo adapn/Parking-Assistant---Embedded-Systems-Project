@@ -1,3 +1,4 @@
+## Parking Assistant Embedded Systems Project
 An intelligent microcontroller-based device that provides real-time assistance for safe and precise vehicle parking. Designed with efficiency, accuracy, and simplicity in mind, this project integrates hardware and software components to enhance the parking experience.
 
 ![Block Diagram](image-Photoroom.png)
@@ -38,11 +39,15 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 ### Hardware Features
 - **Ultrasonic Sensor**: Accurate distance measurement using HC-SR04 sensors.
 - **LED Indicators**:
-  - **Blue**: Ideal distance for parking.
-  - **Yellow**: Too close.
-  - **Red**: Too far.
+  - **Blue**: Ideal distance for parking. ![Blue State](BlueState.jpg)
+  - **Yellow**: Too close.![Yellow State](YellowState.jpg)
+  - **Red**: Too far.![Red State](RedState.jpg)
 - **Button Interface**: Switch between left- and right-side parking configurations.
 - **Compact Design**: 8x8x3 cm, lightweight, and easy to install.
+
+
+
+
 
 ### Software Features
 - **Interrupt-Driven Architecture**: Reduces latency in distance measurement and improves power efficiency.
@@ -55,7 +60,7 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 
 ### Block Diagram
 
-![Block Diagram](image-Photoroom.png)
+![Block Diagram](BlockDiagram.png)
 
 ### Core Components
 1. **Microcontroller (STM32)**: Manages sensor data, LED outputs, and power modes.
@@ -84,9 +89,9 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 ### Key Algorithms
 
 - **Distance Calculation**: The HC-SR04's echo pulse width is converted to distance using the formula:
-  \[
-  \text{Distance (cm)} = \frac{\text{Echo Time (µs)} \times 0.034}{2}
-  \]
+![UltraSonicTiming](UltraSonicTiming.PNG)
+
+  
 - **State Machine**:
   - **Idle**: System waits for user input.
   - **Active**: Measures distance and updates LEDs.
@@ -94,8 +99,8 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 
 ### Interrupt Handling
 - **Ultrasonic Echo**: Rising and falling edge detection via GPIO interrupts.
-- **Button Press**: Mode toggling using edge detection.
-
+- **Button Press**: Mode toggling using edge detection. Used a 10uF capacitor in order to deal with debouoncing issues as seen here: 
+![PushButton](PushButton.jpg)
 ### Power Optimization
 - Sleep mode ensures minimal power consumption during idle states, achieving an idle power of 5mW.
 
@@ -121,6 +126,7 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 - **Timing Precision**: Achieving microsecond-level accuracy for ultrasonic measurements.
 - **Power Efficiency**: Reducing power consumption in idle states.
 - **Interrupt Management**: Handling simultaneous events (e.g., button press and sensor echo).
+- **Debouncing**: Push button debouncing, was fixed via hardware with a capacitor to smooth out these unintentianal presses.
 
 ### Lessons Learned
 - Modular code design simplifies debugging and scalability.
