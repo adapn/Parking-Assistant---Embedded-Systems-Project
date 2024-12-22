@@ -1,5 +1,3 @@
-# Creating the .txt file content for the README
-
 An intelligent microcontroller-based device that provides real-time assistance for safe and precise vehicle parking. Designed with efficiency, accuracy, and simplicity in mind, this project integrates hardware and software components to enhance the parking experience.
 
 ![Block Diagram](image-Photoroom.png)
