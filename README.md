@@ -17,6 +17,7 @@ An intelligent microcontroller-based device that provides real-time assistance f
   - [Power Optimization](#power-optimization)
 - [Data Flow and Communication](#data-flow-and-communication)
 - [Challenges and Lessons Learned](#challenges-and-lessons-learned)
+- [Embedded Systems Learning outcomes](#Embedded-Systems-Learning-outcomes).
 - [Future Improvements](#future-improvements)
 
 
@@ -140,6 +141,21 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 ### Lessons Learned
 - Modular code design simplifies debugging and scalability.
 - Real-time systems require careful timing and power management considerations.
+  
+### Embedded Systems Learning outcomes
+- UART: Serial communication for debugging and data transfer.
+- Interrupts: Real-time response to Echo signal edges and button presses.
+- SysTick Timer: Internal timer for delays and periodic events.
+- General-Purpose Timers (TIM1): Precise timing for ultrasonic sensor measurements.
+- GPIO: Configured for input (Echo, button) and output (Trigger, LEDs).
+- PWM (Pulse Width Measurement): Used indirectly by timing the Echo pulse.
+- Power Management: Implementing sleep mode to reduce idle power consumption.
+- State Machine: Managing Idle, Active, and Sleep states for efficiency.
+- Mathematical Modeling: Converting Echo time to distance using speed of sound.
+- GPIO Interrupt Prioritization: Handling simultaneous events like Echo and button presses.
+- Clock Management: Configuring prescaler for timer resolution (10 µs tick).
+- Real-Time Feedback: Using LEDs to provide immediate visual output based on distance.
+- Debouncing: Button press handling for mode toggling.
 
 ---
 
