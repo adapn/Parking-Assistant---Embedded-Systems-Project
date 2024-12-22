@@ -91,6 +91,15 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 - **Distance Calculation**: The HC-SR04's echo pulse width is converted to distance using the formula:
 ![UltraSonicTiming](UltraSonicTiming.PNG)
 
+- **Timing Configuration for Ultrasonic Sensor**:
+  -The Parking Assistant uses an STM32 timer (TIM1) to measure the time it takes for the ultrasonic signal to travel to the obstacle and back. This section explains how the timing is achieved and the math behind it.
+  -Prescaler: 719 divides the system clock frequency by 720 (Prescaler + 1).
+  -Period: The timer counts from 0 to 65535.
+  - ![Systick](SysTick.png)
+  - Prescaler: Divides the system clock to achieve a timer tick rate of 100 kHz (10 µs per tick).
+  - Timer Measurements: Captures the time between the rising and falling edges of the echo signal.
+  - Distance Calculation: Converts time into distance using the speed of sound formula.
+  
   
 - **State Machine**:
   - **Idle**: System waits for user input.
@@ -139,6 +148,7 @@ The Parking Assistant is a compact, energy-efficient system that helps drivers p
 - **Mobile App Integration**: Display distance and parking mode on a smartphone app via Bluetooth.
 - **Enhanced Feedback**: Add audio cues for proximity warnings.
 - **Advanced Sensors**: Replace HC-SR04 with LiDAR for improved accuracy.
-
+- - **Prototype**: Complete the final prototype and make a PCB for this project.
+![Prototype](Prototype.jpg)
 ---
 
